@@ -43,7 +43,7 @@ namespace GestorOficios.Models.Entities
 
         public DateTime Fecha_Subida { get; set; }
 
-        public EstadoOficioEnum Estado { get; set; }
+        public bool?  Estado;
 
         //Navegacion
         public Departamentos? Departamentos { get; set; }

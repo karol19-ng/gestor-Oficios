@@ -24,7 +24,7 @@ namespace GestorOficios.Models.Entities
 
         public DateTime Fecha_Expiracion { get; set; }
 
-        public EstadoSolicitudEnum Estado { get; set; }
+        public bool Activo { get; set; } // Coincide con SQL: Activo bit
         //Navegacion
         public Usuarios? Usuarios { get; set; }
         public Solicitudes? Solicitudes { get; set; }

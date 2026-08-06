@@ -32,16 +32,14 @@ namespace Gestor0ficios.Models.Entities
 
         //Un usuario puede tener muchos oficios en progreso
 
-        public ICollection<Oficios_En_Progreso>? Oficios_En_Progreso { get; set; } = new List<Oficios_En_Progreso>(); //Relacion con Oficios_En_Progreso
         public ICollection<Archivo> Archivos { get; set; } = new List<Archivo>(); //Relacion con Archivos
         public ICollection<Oficios_En_Progreso>? OficiosEnProgreso { get; set; } = new List<Oficios_En_Progreso>(); //Relacion con Oficios_En_Progreso
         public ICollection<Solicitudes>? Solicitudes { get; set; } = new List<Solicitudes>(); //Relacion con Solicitudes
         public ICollection<Accesos_Temporales>? AccesosTemporales { get; set; } = new List<Accesos_Temporales>();
-        public ICollection<Auditoria_Archivos>Auditorias { get; set; } = new List<Auditoria_Archivos>();
+        public ICollection<Auditoria_Archivos> Auditorias { get; set; } = new List<Auditoria_Archivos>();
 
         //podria tener varios accesos temporales
 
-        public ICollection<Accesos_Temporales>? Accesos_Temporales { get; set; } = new List<Accesos_Temporales>(); //Relacion con Accesos_Temporales
         //Navegacion
         public Cargos? Cargo { get; set; } //Relacion con Cargos
         public Roles? Rol { get; set; } //Relacion con Roles

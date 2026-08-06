@@ -5,7 +5,7 @@ namespace GestorOficios.Models.Entities
 {
     public class Acciones_Sobre_Archivos
     {
-        public TipoSolicitudEnum Id_Accion { get; set; }
+        public int Id_Accion { get; set; }
 
         [Required]
         public string Nombre { get; set; } = string.Empty;

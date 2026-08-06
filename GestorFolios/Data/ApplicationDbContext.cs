@@ -1,6 +1,7 @@
 using Gestor_Oficios.Models.Entities;
 using Gestor0ficios.Models.Entities;
 using GestorOficios.Models.Entities;
+using GestorOficios.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gestor_Oficios.Data
@@ -212,7 +213,7 @@ namespace Gestor_Oficios.Data
                 entity.Property(e => e.Dirigido_A).HasMaxLength(100).IsRequired();
                 entity.Property(e => e.Copia_A).HasMaxLength(100);
                 entity.Property(e => e.Referencia).HasMaxLength(500);
-                entity.Property(e => e.Estado_Ofico).HasMaxLength(20).HasDefaultValue("Activo");  // CORREGIDO: Era Estado_Ofico
+                entity.Property(e => e.Estado_Oficio).HasConversion<string>().HasMaxLength(20).HasDefaultValue(EstadoOficioEnum.Activo);
                 entity.Property(e => e.Fecha_Creacion).HasDefaultValueSql("GETDATE()");
 
                 // Relación con Departamento
@@ -245,7 +246,7 @@ namespace Gestor_Oficios.Data
                 // Solicitante
                 entity.HasOne(e => e.Solicitante)
                       .WithMany(u => u.Solicitudes)
-                      .HasForeignKey(e => e.Id_Solicitud)
+                      .HasForeignKey(e => e.Id_Solicitante)
                       .OnDelete(DeleteBehavior.Restrict);
 
 
@@ -280,7 +281,7 @@ namespace Gestor_Oficios.Data
                 entity.HasKey(e => e.Id_Acceso);
 
                 entity.Property(e => e.Fecha_Inicio).HasDefaultValueSql("GETDATE()");
-                entity.Property(e => e.Estado).HasDefaultValue(true);  // CORREGIDO: Era Estado
+                entity.Property(e => e.Activo).HasDefaultValue(true);
 
 
 
@@ -317,10 +318,10 @@ namespace Gestor_Oficios.Data
                       .HasForeignKey(e => e.Id_Usuario)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                // Relación con Oficio  // CORREGIDO: Era Id_Ofico
+                // Relación con Oficio
                 entity.HasOne(e => e.Oficio)
                       .WithMany(o => o.Auditorias)
-                      .HasForeignKey(e => e.Id_Ofico)
+                      .HasForeignKey(e => e.Id_Oficio)
                       .OnDelete(DeleteBehavior.SetNull);
             });
 

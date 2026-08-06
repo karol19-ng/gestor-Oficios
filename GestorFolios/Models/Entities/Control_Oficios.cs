@@ -36,7 +36,7 @@ namespace GestorOficios.Models.Entities
         [Required]
         public int Id_Archivo { get; set; }
 
-        public EstadoOficioEnum Estado_Ofico { get; set; }
+        public EstadoOficioEnum Estado_Oficio { get; set; }
 
         public DateTime Fecha_Creacion { get; set; }
 

@@ -1,6 +1,4 @@
 ﻿using Gestor0ficios.Models.Entities;
-using GestorOficios.Models.Enums;
-using Humanizer.Localisation;
 using System.ComponentModel.DataAnnotations;
 
 namespace GestorOficios.Models.Entities
@@ -13,10 +11,10 @@ namespace GestorOficios.Models.Entities
         public int Id_Usuario { get; set; }
 
         [Required]
-        public int Id_Ofico { get; set; }
+        public int Id_Oficio { get; set; }
 
         [Required]
-        public TipoSolicitudEnum Accion { get; set; } 
+        public string Accion { get; set; } = string.Empty; // Coincide con nvarchar(50) en SQL (Anulacion, Previsualizacion, Descarga, etc.)
 
         public string Detalle { get; set; } = string.Empty;
 

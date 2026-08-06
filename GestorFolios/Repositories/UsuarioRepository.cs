@@ -13,33 +13,31 @@ namespace GestorOficios.Repositories
         public UsuarioRepository(ApplicationDbContext context) { _context = context; }
 
         public async Task<IEnumerable<Usuarios>> GetAllAsync()
-        { 
+        {
 
             return await _context.Usuarios
-                .Include(u=> u.Nombre_Completo)
-                .Include(u=>u.Codigo_Departamento)
-                .Include(u=>u.Cargo)
+                .Include(u => u.Cargo)
+                .Include(u => u.Rol)
+                .Include(u => u.Departamentos)
                 .ToListAsync();
-        
+
         }//fin todos
 
         public async Task<Usuarios?> GetByIdAsync(int id)
         {
             return await _context.Usuarios
-                .Include(u=>u.Id_Usuario)
-                .Include(u => u.Nombre_Completo)
-                .Include(u => u.Codigo_Departamento)
                 .Include(u => u.Cargo)
+                .Include(u => u.Rol)
+                .Include(u => u.Departamentos)
                 .FirstOrDefaultAsync(u => u.Id_Usuario == id);
         }
 
         public async Task<Usuarios?> GetByNombreAsync(string Nombre)
         {
             return await _context.Usuarios
-                .Include(u => u.Id_Usuario)
-                .Include(u => u.Nombre_Completo)
-                .Include(u => u.Codigo_Departamento)
                 .Include(u => u.Cargo)
+                .Include(u => u.Rol)
+                .Include(u => u.Departamentos)
                 .FirstOrDefaultAsync(u => u.Nombre_Completo == Nombre);
         }
 

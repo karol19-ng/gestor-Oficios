@@ -5,7 +5,7 @@ namespace GestorOficios.Models.Entities
 {
     public class Estados_Solicitudes
     {
-        public EstadoSolicitudEnum Id_Estado { get; set; }
+        public int Id_Estado { get; set; }
 
         [Required]
         public string Nombre { get; set; } = string.Empty;
