@@ -1,4 +1,5 @@
 ﻿using Gestor0ficios.Models.Entities;
+using GestorOficios.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace GestorOficios.Models.Entities
@@ -42,7 +43,7 @@ namespace GestorOficios.Models.Entities
 
         public DateTime Fecha_Subida { get; set; }
 
-        public bool? Estado { get; set; }
+        public EstadoOficioEnum Estado { get; set; }
 
         //Navegacion
         public Departamentos? Departamentos { get; set; }

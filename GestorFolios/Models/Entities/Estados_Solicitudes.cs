@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GestorOficios.Models.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace GestorOficios.Models.Entities
 {
     public class Estados_Solicitudes
     {
-        public int Id_Estado { get; set; }
+        public EstadoSolicitudEnum Id_Estado { get; set; }
 
         [Required]
         public string Nombre { get; set; } = string.Empty;

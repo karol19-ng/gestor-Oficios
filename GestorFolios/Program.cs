@@ -1,8 +1,10 @@
 using Gestor_Oficios.Data;
-
+using GestorOficios.Repositories;
+using GestorOficios.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+//==================================== <>==========================//
 
 
 // Conexión SQL Server
@@ -11,11 +13,32 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
+//==================================== <>==========================//
 
+
+// Carpeta Repositories  contenido interfaz y servicios 
+builder.Services.AddScoped<IFolioRepository, FolioRepository>();
+
+builder.Services.AddScoped<ISolicitudRepository, SolicitudRepository>();
+
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+
+
+
+//==================================== <>==========================//
 builder.Services.AddControllers();
 
 
+
+
+//==================================== <>==========================//
 var app = builder.Build();
+
+
+
+//==================================== <>==========================//
+
 //Prueba de conexion a la base de datos
 using (var scope = app.Services.CreateScope())
 {
@@ -38,6 +61,7 @@ using (var scope = app.Services.CreateScope())
         Console.WriteLine(ex.Message);
     }
 }
+//==================================== <>==========================//
 
 
 app.UseHttpsRedirection();

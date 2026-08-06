@@ -245,7 +245,7 @@ namespace Gestor_Oficios.Data
                 // Solicitante
                 entity.HasOne(e => e.Solicitante)
                       .WithMany(u => u.Solicitudes)
-                      .HasForeignKey(e => e.Id_Solicitante)
+                      .HasForeignKey(e => e.Id_Solicitud)
                       .OnDelete(DeleteBehavior.Restrict);
 
 

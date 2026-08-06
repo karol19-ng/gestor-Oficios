@@ -1,4 +1,5 @@
 ﻿using Gestor0ficios.Models.Entities;
+using GestorOficios.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace GestorOficios.Models.Entities
@@ -23,7 +24,7 @@ namespace GestorOficios.Models.Entities
 
         public DateTime Fecha_Expiracion { get; set; }
 
-        public bool? Estado { get; set; }
+        public EstadoSolicitudEnum Estado { get; set; }
         //Navegacion
         public Usuarios? Usuarios { get; set; }
         public Solicitudes? Solicitudes { get; set; }

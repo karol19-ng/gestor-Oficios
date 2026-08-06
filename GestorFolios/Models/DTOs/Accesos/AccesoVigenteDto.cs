@@ -2,7 +2,6 @@
 {
     public class AccesoVigenteDto
     {
-        //Varias tablas unificadas para dar vision  a los usuarios
         public string CodigoOficio { get; set; } = string.Empty;
 
         public string Asunto { get; set; } = string.Empty;
