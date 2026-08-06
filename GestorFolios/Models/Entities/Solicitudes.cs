@@ -9,8 +9,10 @@ namespace GestorOficios.Models.Entities
 
         public int Id_Solicitud { get; set; }
 
+        public int Id_Solcitante { get; set; }
+
         [Required]
-        public int Id_Solicitante { get; set; }
+        public int Id_Departamento { get; set; }
 
         [Required]
         public int Id_Oficio_Solicitado { get; set; }

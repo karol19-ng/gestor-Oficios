@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GestorOficios.Models.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace GestorOficios.Models.Entities
 {
     public class Acciones_Sobre_Archivos
     {
-        public int Id_Accion { get; set; }
+        public TipoSolicitudEnum Id_Accion { get; set; }
 
         [Required]
         public string Nombre { get; set; } = string.Empty;
